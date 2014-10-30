@@ -27,7 +27,7 @@
       "boot_wait": "10s",
       "disk_size": 20480,
       "guest_os_type": "RedHat_64",
-      "headless": true,
+      "headless": false,
       "http_directory": "http",
       "iso_urls": [
         "CentOS-7.0-1406-x86_64-Minimal.iso",
