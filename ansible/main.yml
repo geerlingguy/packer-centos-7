@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - geerlingguy.packer-rhel
