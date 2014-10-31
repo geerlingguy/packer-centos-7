@@ -1,6 +1,8 @@
-# Packer Example - CentOS 7.0 minimal Vagrant Box using Ansible provisioner
+# Packer Example - CentOS 7 minimal Vagrant Box using Ansible provisioner
 
-This example build configuration installs and configures CentOS 7.0 x86_64 minimal using Ansible, and then generates a Vagrant box file for use with VirtualBox.
+**Current CentOS Version Used**: 7.0
+
+This example build configuration installs and configures CentOS 7 x86_64 minimal using Ansible, and then generates a Vagrant box file for use with VirtualBox.
 
 The example can be modified to use more Ansible roles, plays, and included playbooks to fully configure (or partially) configure a box file suitable for deployment for development environments.
 
