@@ -21,7 +21,7 @@ If you have the role installed somewhere besides the default roles path on your 
 
 Make sure all the required software (listed above) is installed, then cd to the directory containing this README.md file, and run:
 
-    $ packer build centos65.json
+    $ packer build centos7.json
 
 After a few minutes, Packer should tell you the box was generated successfully.
 
