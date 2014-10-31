@@ -25,6 +25,10 @@ Make sure all the required software (listed above) is installed, then cd to the 
 
 After a few minutes, Packer should tell you the box was generated successfully.
 
+## License
+
+MIT license.
+
 ## Author Information
 
 Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
