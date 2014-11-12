@@ -2,5 +2,7 @@
 - hosts: all
   sudo: yes
   gather_facts: yes
+
   roles:
+    - geerlingguy.nfs
     - geerlingguy.packer-rhel

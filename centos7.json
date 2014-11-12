@@ -9,7 +9,8 @@
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
       "role_paths": [
-        "/etc/ansible/roles/geerlingguy.packer-rhel"
+        "/etc/ansible/roles/geerlingguy.packer-rhel",
+        "/etc/ansible/roles/geerlingguy.nfs"
       ]
     },
     {
