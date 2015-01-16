@@ -15,9 +15,9 @@ The following software must be installed/present on your local machine before yo
   - [VirtualBox](https://www.virtualbox.org/)
   - [Ansible](http://docs.ansible.com/intro_installation.html)
 
-You will also need the [`geerlingguy.packer-rhel`](https://galaxy.ansible.com/list#/roles/671) Ansible role installed, which can be installed using the command `ansible-galaxy install geerlingguy.packer-rhel`.
+You will also need the [`geerlingguy.packer-rhel`](https://galaxy.ansible.com/list#/roles/671) and [`geerlingguy.nfs`](https://galaxy.ansible.com/list#/roles/463) Ansible roles installed, which can be installed using the command `ansible-galaxy install geerlingguy.packer-rhel` and `ansible-galaxy install geerlingguy.nfs`, respectively.
 
-If you have the role installed somewhere besides the default roles path on your machine (`/etc/ansible/roles`), you will need to edit the `role_paths` inside `centos65.json` to match the location of the `geerlingguy.packer-rhel` role. If you don't have Ansible installed (perhaps you're using a Windows PC?), you can simply [clone the repository from GitHub](https://github.com/geerlingguy/ansible-role-packer-rhel), and update the `role_paths` variable to match the location of the cloned role.
+If you have the roles installed somewhere besides the default roles path on your machine (`/etc/ansible/roles`), you will need to edit the `role_paths` inside `centos65.json` to match that location. If you don't have Ansible installed (perhaps you're using a Windows PC?), you can simply [clone the repository from GitHub](https://github.com/geerlingguy/ansible-role-packer-rhel), and update the `role_paths` variable to match the location of the cloned role.
 
 ## Usage
 
