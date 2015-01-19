@@ -15,9 +15,12 @@ The following software must be installed/present on your local machine before yo
   - [VirtualBox](https://www.virtualbox.org/)
   - [Ansible](http://docs.ansible.com/intro_installation.html)
 
-You will also need the [`geerlingguy.packer-rhel`](https://galaxy.ansible.com/list#/roles/671) and [`geerlingguy.nfs`](https://galaxy.ansible.com/list#/roles/463) Ansible roles installed, which can be installed using the command `ansible-galaxy install geerlingguy.packer-rhel` and `ansible-galaxy install geerlingguy.nfs`, respectively.
+You will also need some Ansible roles installed so they can be used in the building of the VM. To install the roles:
 
-If you have the roles installed somewhere besides the default roles path on your machine (`/etc/ansible/roles`), you will need to edit the `role_paths` inside `centos65.json` to match that location. If you don't have Ansible installed (perhaps you're using a Windows PC?), you can simply [clone the repository from GitHub](https://github.com/geerlingguy/ansible-role-packer-rhel), and update the `role_paths` variable to match the location of the cloned role.
+  1. Run `$ ansible-galaxy install -r requirements.txt` in this directory.
+  2. If your local Ansible roles path is not the default (`/etc/ansible/roles`), update the `role_paths` inside `centos7.json` to match your custom location.
+
+If you don't have Ansible installed (perhaps you're using a Windows PC?), you can simply clone the required Ansible roles from GitHub directly (use [Ansible Galaxy](https://galaxy.ansible.com/) to get the GitHub repository URLs for each role listed in `requirements.txt`), and update the `role_paths` variable to match the location of the cloned role.
 
 ## Usage
 
