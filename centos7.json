@@ -58,11 +58,40 @@
           "2"
         ]
       ]
+    },
+    {
+      "type": "vmware-iso",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 20480,
+      "guest_os_type": "centos-64",
+      "headless": false,
+      "http_directory": "http",
+      "iso_urls": [
+        "CentOS-7.0-1406-x86_64-Minimal.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso"
+      ],
+      "iso_checksum_type": "md5",
+      "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "tools_upload_flavor": "linux",
+      "vm_name": "packer-centos-7.0-x86_64",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "512",
+        "numvcpus": "2"
+      }
     }
   ],
   "post-processors": [
     {
-      "output": "builds/VirtualBox-centos70.box",
+      "output": "builds/{{.Provider}}-centos70.box",
       "type": "vagrant"
     }
   ]
