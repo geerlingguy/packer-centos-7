@@ -31,8 +31,8 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7.0-1406-x86_64-Minimal.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso"
+        "CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
       "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
@@ -70,8 +70,8 @@
       "headless": false,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7.0-1406-x86_64-Minimal.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso"
+        "CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
       "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
