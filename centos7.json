@@ -31,11 +31,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7.0-1406-x86_64-Minimal.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso"
+        "CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
+      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -43,7 +43,7 @@
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-centos-7.0-x86_64",
+      "vm_name": "packer-centos-7-x86_64",
       "vboxmanage": [
         [
           "modifyvm",
@@ -70,18 +70,18 @@
       "headless": false,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7.0-1406-x86_64-Minimal.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso"
+        "CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
+      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "tools_upload_flavor": "linux",
-      "vm_name": "packer-centos-7.0-x86_64",
+      "vm_name": "packer-centos-7-x86_64",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "512",
