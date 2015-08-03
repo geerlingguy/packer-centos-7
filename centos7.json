@@ -26,7 +26,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 20480,
+      "disk_size": 81920,
       "guest_os_type": "RedHat_64",
       "headless": true,
       "http_directory": "http",
@@ -65,7 +65,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 20480,
+      "disk_size": 81920,
       "guest_os_type": "centos-64",
       "headless": true,
       "http_directory": "http",
