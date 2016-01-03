@@ -31,11 +31,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7-x86_64-Minimal-1503-01.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
+        "CentOS-7-x86_64-Minimal-1511.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
+      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -70,11 +70,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7-x86_64-Minimal-1503-01.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
+        "CentOS-7-x86_64-Minimal-1511.iso",
+        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
+      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
