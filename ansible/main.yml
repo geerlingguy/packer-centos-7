@@ -6,3 +6,15 @@
   roles:
     - geerlingguy.nfs
     - geerlingguy.packer-rhel
+
+ 
+  tasks:
+
+          # For ssh to vagrant centos box to succeed it is necessary to comment out two lines in sudoers file        
+          # See https://github.com/mitchellh/vagrant/issues/1482 
+
+    - lineinfile: "dest=/etc/sudoers regexp='^(Defaults.*requiretty)' line='#\\1' state=present backrefs=yes"
+  #   - lineinfile: "dest=/etc/sudoers regexp='^(Defaults.*visiblepw)' line='#\\1' state=present backrefs=yes"   
+
+          # Required for aws builder
+    - lineinfile: "dest=/etc/sudoers.d/vagrant line='vagrant      ALL=(ALL)      NOPASSWD: ALL' create=yes state=present"
