@@ -40,35 +40,50 @@ If you want to only build a box for one of the supported virtualization platform
 
     $ packer build --only=vmware-iso centos7.json
 
-## Vagrantfile sample for amazon-ebs box
+### Vagrantfile for amazon-ebs box
+
+Add newly created box to vagrant.
+
+    $ vagrant box add /path/to/aws-centos7.box --name aws-centos7
+
+In your vagrant project directory you must install vagrant aws plugin. See [https://github.com/mitchellh/vagrant-aws] 
+
+    $ vagrant plugin install vagrant-aws
+
+Configure a Vagrantfile like one below. For further information consult [https://github.com/mitchellh/vagrant-aws] 
+
+```ruby 
 
 Vagrant.configure("2") do |config|
+  
   config.vm.box = "aws-centos7"
 
+  # After issuing vagrant up command rsync will update from local folder to destination folder.
   config.vm.synced_folder "synced-folder/", "/synced-folder", type: "rsync"
 
   config.ssh.pty = true
 
 
   config.vm.provider :aws do |aws, override|
+    
     aws.access_key_id = "ID"
     aws.secret_access_key = "SECRET"
 
-    # In EC2 create a keypair and download private key.pem to your computer
-    aws.keypair_name = "aws-vagrant-keypair"
-
-    aws.ami = "ami-d827e7b5"
+    # This is the private AMI ID created by packer
+    aws.ami = "ami-12345678"
 
     aws.instance_type = "t2.micro"
     
-    # Assign instance security group with port 22 open. 
+    # Assign ec2 instance a security group with port 22 open. 
     aws.security_groups = "SSH-open"
 
-
+    # NFS will not work for remote instance
     override.nfs.functional = false
 
   end
 end
+
+```
 
 After installing vagrant aws plugin to Vagrant project folder run 
 
