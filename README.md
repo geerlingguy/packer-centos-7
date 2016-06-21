@@ -6,7 +6,7 @@ This example build configuration installs and configures CentOS 7 x86_64 minimal
 
   - VirtualBox
   - VMware
-  - amazon-ebs
+  - Amazon-EBS
 
 The example can be modified to use more Ansible roles, plays, and included playbooks to fully configure (or partially) configure a box file suitable for deployment for development environments.
 
@@ -40,17 +40,17 @@ If you want to only build a box for one of the supported virtualization platform
 
     $ packer build --only=vmware-iso centos7.json
 
-### Vagrantfile for amazon-ebs box
+### Vagrant Amazon-EBS Box Configuration 
 
-Add newly created box to vagrant.
+1. Add newly created box to vagrant.
 
     $ vagrant box add /path/to/aws-centos7.box --name aws-centos7
 
-In your vagrant project directory you must install vagrant aws plugin. See [https://github.com/mitchellh/vagrant-aws] 
+2. In your vagrant project directory you must install vagrant aws plugin. See https://github.com/mitchellh/vagrant-aws 
 
     $ vagrant plugin install vagrant-aws
 
-Configure a Vagrantfile like one below. For further information consult [https://github.com/mitchellh/vagrant-aws] 
+3. Configure a Vagrantfile like one below. See https://github.com/mitchellh/vagrant-aws
 
 ```ruby 
 
@@ -85,9 +85,10 @@ end
 
 ```
 
-After installing vagrant aws plugin to Vagrant project folder run 
+4. After installing vagrant aws plugin to Vagrant project folder run 
 
     $ vagrant up --provider=aws
+
 
 ## License
 
@@ -97,4 +98,4 @@ MIT license.
 
 Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
 
-Amazon-ebs vagrant box build created in 2016 by [Peter Mika](peter.c.mika@gmail.com)
+Amazon-EBS Vagrant box build created in 2016 by [Peter Mika](peter.c.mika@gmail.com)

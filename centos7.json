@@ -39,7 +39,7 @@
       "instance_type": "t2.micro",
       "ssh_username": "centos",
       "ssh_pty" : true,
-      "ami_name": "CentOS 7 Vagrant box {{timestamp}}"
+      "ami_name": "CentOS 7 Vagrant Box {{timestamp}}"
     },
  
     {
