@@ -28,11 +28,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7-x86_64-Minimal-1511.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso"
+        "CentOS-7-x86_64-Minimal-1611.iso",
+        "http://ftp.wrz.de/pub/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso"
       ],
-      "iso_checksum_type": "md5",
-      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "27bd866242ee058b7a5754e83d8ee8403e216b93d130d800852a96f41c34d86a",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -67,11 +67,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "CentOS-7-x86_64-Minimal-1511.iso",
-        "http://centos.mirrors.hoobly.com/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso"
+        "CentOS-7-x86_64-Minimal-1611.iso",
+        "http://ftp.wrz.de/pub/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso"
       ],
-      "iso_checksum_type": "md5",
-      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "27bd866242ee058b7a5754e83d8ee8403e216b93d130d800852a96f41c34d86a",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
