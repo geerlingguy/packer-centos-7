@@ -1,6 +1,6 @@
 # Packer Example - CentOS 7 minimal Vagrant Box using Ansible provisioner
 
-**Current CentOS Version Used**: 7.2
+**Current CentOS Version Used**: 7.3
 
 **Pre-built Vagrant Box**:
 
@@ -34,7 +34,11 @@ After a few minutes, Packer should tell you the box was generated successfully.
 
 If you want to only build a box for one of the supported virtualization platforms (e.g. only build the VMware box), add `--only=vmware-iso` to the `packer build` command:
 
+	# VMWare:
     $ packer build --only=vmware-iso centos7.json
+
+	# VirtualBox:
+    $ packer build --only=virtualbox-iso centos7.json
 
 ## Testing built boxes
 
@@ -42,7 +46,7 @@ There's an included Vagrantfile that allows quick testing of the built Vagrant b
 
     # For VMware Fusion:
     $ vagrant up vmware --provider=vmware_fusion
-    
+
     # For VirtualBox:
     $ vagrant up virtualbox --provider=virtualbox
 
