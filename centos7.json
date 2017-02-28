@@ -84,6 +84,11 @@
         "memsize": "512",
         "numvcpus": "2"
       }
+    },
+    {
+      "type": "docker",
+      "image": "geerlingguy/docker-centos7-ansible",
+      "commit": "true"
     }
   ],
   "post-processors": [
