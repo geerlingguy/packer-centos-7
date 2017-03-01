@@ -94,7 +94,19 @@
   "post-processors": [
     {
       "output": "builds/{{.Provider}}-centos7.box",
-      "type": "vagrant"
-    }
+      "type": "vagrant",
+      "only": ["virtualbox-iso", "vmware-iso"]
+    },
+    [
+      {
+        "type": "docker-tag",
+        "repository": "huitseeker/dl4j-centos7-dev-env",
+        "tag": "latest",
+        "only": ["docker"]
+      },
+      "docker-push"
+    ]
+
+
   ]
 }
