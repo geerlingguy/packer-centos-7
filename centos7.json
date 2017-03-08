@@ -3,7 +3,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/ansible.sh"
+      "scripts": ["scripts/ansible.sh"]
     },
     {
       "type": "ansible-local",
@@ -12,6 +12,7 @@
     },
     {
       "type": "shell",
+      "except": ["virtualbox-iso"],
       "execute_command": "echo 'vagrant' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
       "scripts": ["scripts/cleanup.sh"]
     }
@@ -37,7 +38,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-centos-7-x86_64",
@@ -76,7 +77,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
       "tools_upload_flavor": "linux",
       "vm_name": "packer-centos-7-x86_64",
       "vmx_data": {
@@ -104,7 +105,9 @@
         "tag": "latest",
         "only": ["docker"]
       },
-      "docker-push"
+      { "type": "docker-push",
+        "only": ["docker"]
+      }
     ]
 
 
