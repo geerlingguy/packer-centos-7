@@ -6,15 +6,22 @@
       "scripts": ["scripts/ansible.sh"]
     },
     {
+        "type": "shell",
+        "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+        "inline": [
+            "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers"
+        ]
+    },
+    {
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
       "galaxy_file": "requirements.yml"
     },
     {
       "type": "shell",
-      "except": ["virtualbox-iso"],
-      "execute_command": "echo 'vagrant' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "scripts": ["scripts/cleanup.sh"]
+      "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'",
+       "scripts": ["scripts/cleanup.sh"],
+       "except": ["docker"]
     }
   ],
   "builders": [
@@ -38,7 +45,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "shutdown_command": "sudo /sbin/halt -h -p",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-centos-7-x86_64",
