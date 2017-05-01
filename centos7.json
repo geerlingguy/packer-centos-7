@@ -2,8 +2,15 @@
   "provisioners": [
     {
       "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/ansible.sh"
+      "execute_command": "echo 'vagrant' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "scripts": ["scripts/ansible.sh"]
+    },
+    {
+        "type": "shell",
+        "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+        "inline": [
+            "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers"
+        ]
     },
     {
       "type": "ansible-local",
@@ -12,8 +19,9 @@
     },
     {
       "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/cleanup.sh"
+      "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'",
+       "scripts": ["scripts/cleanup.sh"],
+       "except": ["docker"]
     }
   ],
   "builders": [
@@ -37,7 +45,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "shutdown_command": "sudo /sbin/halt -h -p",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-centos-7-x86_64",
@@ -76,7 +84,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "shutdown_command": "sudo /sbin/halt -h -p",
       "tools_upload_flavor": "linux",
       "vm_name": "packer-centos-7-x86_64",
       "vmx_data": {
@@ -84,12 +92,31 @@
         "memsize": "512",
         "numvcpus": "2"
       }
+    },
+    {
+      "type": "docker",
+      "image": "geerlingguy/docker-centos7-ansible",
+      "commit": "true"
     }
   ],
   "post-processors": [
     {
       "output": "builds/{{.Provider}}-centos7.box",
-      "type": "vagrant"
-    }
+      "type": "vagrant",
+      "only": ["virtualbox-iso", "vmware-iso"]
+    },
+    [
+      {
+        "type": "docker-tag",
+        "repository": "huitseeker/dl4j-centos7-dev-env",
+        "tag": "latest",
+        "only": ["docker"]
+      },
+      { "type": "docker-push",
+        "only": ["docker"]
+      }
+    ]
+
+
   ]
 }

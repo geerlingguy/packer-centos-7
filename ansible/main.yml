@@ -4,5 +4,5 @@
   gather_facts: yes
 
   roles:
-    - geerlingguy.nfs
-    - geerlingguy.packer-rhel
+    # - geerlingguy.packer-rhel
+    - huitseeker.java_deps
