@@ -84,12 +84,29 @@
         "memsize": "512",
         "numvcpus": "2"
       }
+    },
+    {
+      "type": "docker",
+      "image": "geerlingguy/docker-centos7-ansible",
+      "commit": "true"
     }
   ],
   "post-processors": [
     {
       "output": "builds/{{.Provider}}-centos7.box",
-      "type": "vagrant"
-    }
+      "type": "vagrant",
+      "only": ["virtualbox-iso", "vmware-iso"]
+    },
+    [
+      {
+        "type": "docker-tag",
+        "repository": "huitseeker/dl4j-centos7-dev-env",
+        "tag": "latest",
+        "only": ["docker"]
+      },
+      "docker-push"
+    ]
+
+
   ]
 }
