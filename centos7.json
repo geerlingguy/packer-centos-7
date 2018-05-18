@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "version": ""
+  },
   "provisioners": [
     {
       "type": "shell",
@@ -58,9 +61,16 @@
     }
   ],
   "post-processors": [
-    {
-      "output": "builds/{{.Provider}}-centos7.box",
-      "type": "vagrant"
-    }
+    [
+      {
+        "output": "builds/{{.Provider}}-centos7.box",
+        "type": "vagrant"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "geerlingguy/centos7",
+        "version": "{{user `version`}}"
+      }
+    ]
   ]
 }
