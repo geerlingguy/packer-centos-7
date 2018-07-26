@@ -1,6 +1,6 @@
 # Packer Example - CentOS 7 minimal Vagrant Box using Ansible provisioner
 
-**Current CentOS Version Used**: 7.4 (1708)
+**Current CentOS Version Used**: 7.5 (1804)
 
 **Pre-built Vagrant Box**:
 
