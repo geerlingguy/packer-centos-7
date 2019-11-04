@@ -5,4 +5,4 @@
 
   roles:
     - geerlingguy.nfs
-    - geerlingguy.packer-rhel
+    - geerlingguy.packer_rhel
